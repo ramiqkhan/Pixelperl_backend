@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import dns from "dns";
 import { connectDB } from "./config/db.js";
 import quoteRoutes from "./routes/quoteRoutes.js"; // <-- IMPORT QUOTE ROUTES HERE
+import contactRoutes from './routes/contactRoutes.js';
+
 // Force Google Public DNS to bypass local ISP SRV lookup blocks
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
@@ -19,6 +21,7 @@ connectDB();
 
 // Routes
 app.use("/api/quotes", quoteRoutes); // <-- MOUNT QUOTE ROUTES HERE
+app.use('/api/contact', contactRoutes);
 // Root route (for testing)
 app.get("/", (req, res) => res.send("Backend is running!"));
 
