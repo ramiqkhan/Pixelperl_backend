@@ -18,7 +18,7 @@ app.use(express.json());
 
 // Connect to DB immediately for local server instance
 connectDB();
-
+ 
 // Routes
 app.use("/api/quotes", quoteRoutes); // <-- MOUNT QUOTE ROUTES HERE
 app.use('/api/contact', contactRoutes);
